@@ -83,4 +83,1262 @@ opacity: 0.88;
 .circle3 {
 position: absolute;
 width: 95px;
-height: 95px
+height: 95px;
+border-radius: 50%;
+border: 18px solid rgba(255,255,255,0.22);
+right: 31%;
+bottom: 35px;
+}
+
+
+.header-content {
+position: relative;
+z-index: 2;
+max-width: 1250px;
+margin: auto;
+}
+
+
+.small-title {
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 0.16em;
+color: #46667a;
+margin-bottom: 17px;
+}
+
+
+h1 {
+margin: 0;
+font-size: 48px;
+font-weight: 750;
+letter-spacing: -0.045em;
+color: #132238;
+}
+
+
+.subtitle {
+margin-top: 14px;
+font-size: 18px;
+color: #46677c;
+}
+
+
+.update {
+margin-top: 31px;
+display: inline-flex;
+align-items: center;
+background: rgba(255,255,255,0.72);
+padding: 10px 17px;
+border-radius: 50px;
+font-size: 13px;
+color: #526875;
+}
+
+
+.update-dot {
+width: 7px;
+height: 7px;
+background: #8ed138;
+border-radius: 50%;
+margin-right: 8px;
+}
+
+
+
+/* =========================
+MAIN
+========================= */
+
+
+.container {
+width: 87%;
+max-width: 1250px;
+margin: -32px auto 70px;
+position: relative;
+z-index: 3;
+}
+
+
+.section-title {
+font-size: 19px;
+font-weight: 650;
+margin: 31px 0 16px;
+color: #27374a;
+}
+
+
+
+/* =========================
+CARDS
+========================= */
+
+
+.cards {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 17px;
+}
+
+
+.card {
+background: rgba(255,255,255,0.97);
+border-radius: 20px;
+padding: 25px;
+box-shadow: 0 7px 25px rgba(47,85,110,0.075);
+border: 1px solid rgba(220,232,239,0.85);
+transition: 0.2s ease;
+}
+
+
+.card:hover {
+transform: translateY(-3px);
+box-shadow: 0 12px 30px rgba(47,85,110,0.12);
+}
+
+
+.currency {
+font-size: 13px;
+color: #687c89;
+font-weight: 600;
+}
+
+
+.value {
+font-size: 31px;
+font-weight: 680;
+letter-spacing: -0.035em;
+color: #182335;
+margin: 14px 0 9px;
+}
+
+
+.change {
+font-size: 13px;
+font-weight: 600;
+}
+
+
+.up {
+color: #ef5961;
+}
+
+
+.down {
+color: #3c9a61;
+}
+
+
+.same {
+color: #89969e;
+}
+
+
+.accent {
+height: 4px;
+width: 38px;
+background: #b5ec56;
+border-radius: 10px;
+margin-top: 21px;
+}
+
+
+
+/* =========================
+CHART
+========================= */
+
+
+.chart-box {
+margin-top: 19px;
+background: white;
+border-radius: 22px;
+padding: 30px 32px 28px;
+box-shadow: 0 7px 28px rgba(47,85,110,0.075);
+border: 1px solid #edf3f6;
+}
+
+
+.chart-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 23px;
+}
+
+
+.chart-title {
+font-size: 18px;
+font-weight: 650;
+color: #26374a;
+}
+
+
+.badge {
+background: #edf8dd;
+color: #61892e;
+border-radius: 30px;
+padding: 7px 14px;
+font-size: 12px;
+font-weight: 600;
+}
+
+
+.chart-wrapper {
+height: 370px;
+}
+
+
+
+/* =========================
+BOTTOM
+========================= */
+
+
+.info {
+display: grid;
+grid-template-columns: 1.5fr 1fr;
+gap: 18px;
+margin-top: 18px;
+}
+
+
+.info-box {
+background: white;
+border-radius: 20px;
+padding: 27px;
+box-shadow: 0 7px 25px rgba(47,85,110,0.065);
+border: 1px solid #edf3f6;
+}
+
+
+.info-box h3 {
+margin: 0 0 10px;
+font-size: 17px;
+font-weight: 650;
+}
+
+
+.info-box p {
+margin: 7px 0;
+font-size: 14px;
+line-height: 1.7;
+color: #72818c;
+}
+
+
+.green-circle {
+width: 52px;
+height: 52px;
+border-radius: 50%;
+background: #b9f255;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 21px;
+font-weight: 650;
+color: #355719;
+margin-bottom: 19px;
+}
+
+
+.loading {
+text-align: center;
+padding: 30px;
+color: #78909c;
+}
+
+
+.error {
+background: #fff1f1;
+color: #c14c4c;
+border-radius: 15px;
+padding: 16px 20px;
+margin-bottom: 20px;
+display: none;
+}
+
+
+.footer {
+text-align: center;
+color: #9baab3;
+font-size: 11px;
+padding: 28px 20px 40px;
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width: 850px) {
+
+
+h1 {
+font-size: 37px;
+}
+
+
+.cards {
+grid-template-columns: repeat(2, 1fr);
+}
+
+
+.info {
+grid-template-columns: 1fr;
+}
+
+
+.container {
+width: 92%;
+}
+}
+
+
+@media(max-width: 520px) {
+
+
+h1 {
+font-size: 32px;
+}
+
+
+.cards {
+grid-template-columns: 1fr;
+}
+
+
+.chart-wrapper {
+height: 300px;
+}
+}
+
+
+</style>
+</head>
+
+
+
+<body>
+
+
+
+<!-- HEADER -->
+
+
+<div class="header">
+
+
+<div class="circle1"></div>
+<div class="circle2"></div>
+<div class="circle3"></div>
+
+
+<div class="header-content">
+
+
+<div class="small-title">
+DAILY MARKET DATA
+</div>
+
+
+<h1>
+Daily FX Dashboard
+</h1>
+
+
+<div class="subtitle">
+주요 통화 환율 현황 및 일간 추이
+</div>
+
+
+<div class="update">
+
+
+<span class="update-dot"></span>
+
+
+Last Updated  
+
+
+<span id="updateDate">
+데이터 불러오는 중
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- MAIN -->
+
+
+<div class="container">
+
+
+
+<div id="errorBox" class="error"></div>
+
+
+
+<div class="section-title">
+오늘의 환율
+</div>
+
+
+
+<div id="cards" class="cards">
+
+
+<div class="loading">
+환율 데이터를 불러오고 있습니다...
+</div>
+
+
+</div>
+
+
+
+<!-- CHART -->
+
+
+<div class="chart-box">
+
+
+<div class="chart-header">
+
+
+<div class="chart-title">
+USD/KRW 환율 추이
+</div>
+
+
+<div class="badge" id="periodBadge">
+전체 기간
+</div>
+
+
+</div>
+
+
+<div class="chart-wrapper">
+<canvas id="fxChart"></canvas>
+</div>
+
+
+</div>
+
+
+
+<!-- BOTTOM -->
+
+
+<div class="info">
+
+
+<div class="info-box">
+
+
+<div class="green-circle">
+₩
+</div>
+
+
+<h3>
+Daily FX Monitor
+</h3>
+
+
+<p>
+주요 통화의 원화 환율과 일간 움직임을
+한눈에 확인할 수 있습니다.
+</p>
+
+
+<p>
+환율 데이터 파일의 마지막 날짜를 기준으로
+현재 환율과 전일 대비 변동률이 자동 계산됩니다.
+</p>
+
+
+</div>
+
+
+
+<div class="info-box">
+
+
+<h3>
+Data Information
+</h3>
+
+
+<p>
+기준일  
+<strong id="baseDate">-</strong>
+</p>
+
+
+<p>
+데이터  
+fx-data.csv
+</p>
+
+
+<p>
+업데이트  
+Daily
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="footer">
+Daily FX Dashboard
+</div>
+
+
+
+<script>
+
+
+/* ========================================
+CSV 불러오기
+======================================== */
+
+
+fetch('fx-data.csv?version=' + new Date().getTime())
+
+
+.then(response => {
+
+
+if (!response.ok) {
+throw new Error('fx-data.csv 파일을 찾을 수 없습니다.');
+}
+
+
+return response.text();
+
+
+})
+
+
+.then(csvText => {
+
+
+const data = parseCSV(csvText);
+
+
+if (data.length < 2) {
+throw new Error('환율 데이터가 2일 이상 필요합니다.');
+}
+
+
+renderDashboard(data);
+
+
+})
+
+
+.catch(error => {
+
+
+console.error(error);
+
+
+const errorBox =
+document.getElementById('errorBox');
+
+
+errorBox.style.display = 'block';
+
+
+errorBox.innerHTML =
+'데이터를 불러오지 못했습니다.<br>' +
+'fx-data.csv 파일이 index.html과 같은 위치에 있는지 확인해주세요.';
+
+
+});
+
+
+
+/* ========================================
+CSV → 데이터 변환
+======================================== */
+
+
+function parseCSV(text) {
+
+
+const lines = text
+.trim()
+.split(/\r?\n/);
+
+
+const rows = [];
+
+
+
+for (let i = 1; i < lines.length; i++) {
+
+
+if (!lines[i].trim()) {
+continue;
+}
+
+
+const columns =
+lines[i].split(',');
+
+
+
+rows.push({
+
+
+Date:
+columns[0].trim(),
+
+
+USDKRW:
+Number(columns[1]),
+
+
+EURKRW:
+Number(columns[2]),
+
+
+JPYKRW:
+Number(columns[3]),
+
+
+CNYKRW:
+Number(columns[4])
+
+
+});
+
+
+}
+
+
+
+rows.sort(
+(a, b) =>
+new Date(a.Date) - new Date(b.Date)
+);
+
+
+
+return rows;
+}
+
+
+
+/* ========================================
+대시보드 그리기
+======================================== */
+
+
+function renderDashboard(data) {
+
+
+const today =
+data[data.length - 1];
+
+
+const yesterday =
+data[data.length - 2];
+
+
+
+/* 날짜 */
+
+
+const displayDate =
+formatDate(today.Date);
+
+
+document.getElementById('updateDate')
+.textContent = displayDate;
+
+
+document.getElementById('baseDate')
+.textContent = displayDate;
+
+
+
+/* 카드 */
+
+
+const currencies = [
+
+
+{
+key: 'USDKRW',
+name: 'USD / KRW',
+flag: '🇺🇸',
+decimals: 2
+},
+
+
+{
+key: 'EURKRW',
+name: 'EUR / KRW',
+flag: '🇪🇺',
+decimals: 2
+},
+
+
+{
+key: 'JPYKRW',
+name: 'JPY / KRW',
+flag: '🇯🇵',
+decimals: 2
+},
+
+
+{
+key: 'CNYKRW',
+name: 'CNY / KRW',
+flag: '🇨🇳',
+decimals: 2
+}
+
+
+];
+
+
+
+const cards =
+document.getElementById('cards');
+
+
+cards.innerHTML = '';
+
+
+
+currencies.forEach(currency => {
+
+
+const current =
+today[currency.key];
+
+
+const previous =
+yesterday[currency.key];
+
+
+const difference =
+current - previous;
+
+
+const percentage =
+(difference / previous) * 100;
+
+
+
+let arrow = '―';
+
+
+let directionClass =
+'same';
+
+
+
+if (difference > 0) {
+
+
+arrow = '▲';
+
+
+directionClass = 'up';
+
+
+}
+
+
+else if (difference < 0) {
+
+
+arrow = '▼';
+
+
+directionClass = 'down';
+
+
+}
+
+
+
+const card =
+document.createElement('div');
+
+
+card.className = 'card';
+
+
+
+card.innerHTML = `
+
+
+<div class="currency">
+
+
+${currency.flag}
+ 
+${currency.name}
+
+
+</div>
+
+
+
+<div class="value">
+
+
+${formatNumber(
+current,
+currency.decimals
+)}
+
+
+</div>
+
+
+
+<div class="change ${directionClass}">
+
+
+${arrow}
+
+
+${Math.abs(difference).toFixed(2)}
+
+
+  
+
+
+${difference >= 0 ? '+' : '-'}
+
+
+${Math.abs(percentage).toFixed(2)}%
+
+
+</div>
+
+
+
+<div class="accent"></div>
+
+
+`;
+
+
+
+cards.appendChild(card);
+
+
+});
+
+
+
+/* 그래프 */
+
+
+drawChart(data);
+
+
+}
+
+
+
+/* ========================================
+USD/KRW 그래프
+======================================== */
+
+
+function drawChart(data) {
+
+
+const labels =
+data.map(row =>
+formatChartDate(row.Date)
+);
+
+
+
+const values =
+data.map(row =>
+row.USDKRW
+);
+
+
+
+const ctx =
+document.getElementById('fxChart');
+
+
+
+new Chart(ctx, {
+
+
+type: 'line',
+
+
+
+data: {
+
+
+labels: labels,
+
+
+
+datasets: [{
+
+
+label:
+'USD/KRW',
+
+
+data:
+values,
+
+
+borderColor:
+'#4c9ed7',
+
+
+backgroundColor:
+'rgba(76,158,215,0.08)',
+
+
+borderWidth:
+2.5,
+
+
+fill:
+true,
+
+
+tension:
+0.35,
+
+
+pointRadius:
+3,
+
+
+pointHoverRadius:
+6,
+
+
+pointBackgroundColor:
+'#4c9ed7'
+
+
+}]
+
+
+},
+
+
+
+options: {
+
+
+responsive:
+true,
+
+
+maintainAspectRatio:
+false,
+
+
+
+interaction: {
+
+
+intersect:
+false,
+
+
+mode:
+'index'
+
+
+},
+
+
+
+plugins: {
+
+
+legend: {
+display: false
+},
+
+
+
+tooltip: {
+
+
+backgroundColor:
+'#1d2b3b',
+
+
+padding:
+12,
+
+
+cornerRadius:
+9,
+
+
+displayColors:
+false,
+
+
+callbacks: {
+
+
+label:
+function(context) {
+
+
+return (
+' USD/KRW ' +
+Number(context.raw)
+.toLocaleString(
+'ko-KR',
+{
+minimumFractionDigits: 2,
+maximumFractionDigits: 2
+}
+)
+);
+
+
+}
+
+
+}
+
+
+}
+
+
+},
+
+
+
+scales: {
+
+
+x: {
+
+
+border: {
+display: false
+},
+
+
+grid: {
+display: false
+},
+
+
+ticks: {
+
+
+color:
+'#8a9aa5',
+
+
+maxTicksLimit:
+8,
+
+
+font: {
+
+
+family:
+'Pretendard',
+
+
+size:
+11
+
+
+}
+
+
+}
+
+
+},
+
+
+
+y: {
+
+
+border: {
+display: false
+},
+
+
+grid: {
+
+
+color:
+'#edf2f5'
+
+
+},
+
+
+ticks: {
+
+
+color:
+'#8a9aa5',
+
+
+callback:
+function(value) {
+
+
+return Number(value)
+.toLocaleString(
+'ko-KR'
+);
+
+
+},
+
+
+font: {
+
+
+family:
+'Pretendard',
+
+
+size:
+11
+
+
+}
+
+
+}
+
+
+}
+
+
+}
+
+
+}
+
+
+});
+
+
+}
+
+
+
+/* ========================================
+숫자 표시
+======================================== */
+
+
+function formatNumber(number, decimals) {
+
+
+return Number(number)
+.toLocaleString(
+'ko-KR',
+{
+minimumFractionDigits:
+decimals,
+
+
+maximumFractionDigits:
+decimals
+}
+);
+
+
+}
+
+
+
+/* ========================================
+날짜 표시
+======================================== */
+
+
+function formatDate(dateString) {
+
+
+const parts =
+dateString.split('-');
+
+
+return (
+parts[0] +
+'.' +
+parts[1] +
+'.' +
+parts[2]
+);
+
+
+}
+
+
+
+function formatChartDate(dateString) {
+
+
+const parts =
+dateString.split('-');
+
+
+return (
+parts[1] +
+'/' +
+parts[2]
+);
+
+
+}
+
+
+</script>
+
+
+
+</body>
+</html>
