@@ -8,10 +8,18 @@
 <title>Daily FX Dashboard</title>
 
 
+<!-- Pretendard -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
+
+<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 <style>
+
+
 * {
 box-sizing: border-box;
 }
@@ -19,235 +27,643 @@ box-sizing: border-box;
 
 body {
 margin: 0;
-font-family: Arial, "Noto Sans KR", sans-serif;
-background: #f7fbfd;
-color: #14213d;
+font-family: "Pretendard", -apple-system, BlinkMacSystemFont,
+"Segoe UI", sans-serif;
+background: #f6fafc;
+color: #172033;
+letter-spacing: -0.02em;
 }
+
+
+
+/* =========================
+HEADER
+========================= */
 
 
 .header {
 position: relative;
 overflow: hidden;
-background: #a9d5ee;
-padding: 55px 7% 65px;
-min-height: 260px;
+
+
+background:
+linear-gradient(
+135deg,
+#b8ddf1 0%,
+#a8d4ec 55%,
+#9bcbe6 100%
+);
+
+
+padding: 62px 7% 78px;
+min-height: 285px;
 }
+
+
+
+/* 큰 원 */
 
 
 .circle1 {
 position: absolute;
-width: 330px;
-height: 330px;
+
+
+width: 390px;
+height: 390px;
+
+
 border-radius: 50%;
-background: rgba(255,255,255,0.28);
-right: 8%;
-top: -100px;
+
+
+background: rgba(255,255,255,0.20);
+
+
+right: 7%;
+top: -150px;
 }
+
+
+
+/* 작은 연두색 원 */
 
 
 .circle2 {
 position: absolute;
-width: 180px;
-height: 180px;
+
+
+width: 220px;
+height: 220px;
+
+
 border-radius: 50%;
-background: #b9f45c;
-right: 2%;
-bottom: -100px;
-opacity: 0.8;
+
+
+background: #b9f255;
+
+
+right: -65px;
+bottom: -120px;
+
+
+opacity: 0.88;
 }
+
 
 
 .header-content {
 position: relative;
 z-index: 2;
-max-width: 1200px;
+
+
+max-width: 1250px;
 margin: auto;
 }
 
 
+
 .small-title {
-font-size: 14px;
+
+
+font-size: 13px;
+
+
 font-weight: 700;
-letter-spacing: 2px;
-margin-bottom: 12px;
+
+
+letter-spacing: 0.16em;
+
+
+color: #46667a;
+
+
+margin-bottom: 17px;
 }
+
 
 
 h1 {
+
+
 margin: 0;
-font-size: 46px;
-letter-spacing: -2px;
+
+
+font-size: 48px;
+
+
+font-weight: 750;
+
+
+letter-spacing: -0.045em;
+
+
+color: #132238;
 }
+
 
 
 .subtitle {
-margin-top: 13px;
-font-size: 17px;
-color: #39566c;
+
+
+margin-top: 14px;
+
+
+font-size: 18px;
+
+
+font-weight: 400;
+
+
+color: #46677c;
 }
+
 
 
 .update {
-margin-top: 30px;
-display: inline-block;
-background: rgba(255,255,255,0.75);
-padding: 10px 16px;
-border-radius: 30px;
+
+
+margin-top: 31px;
+
+
+display: inline-flex;
+
+
+align-items: center;
+
+
+background: rgba(255,255,255,0.72);
+
+
+padding: 10px 17px;
+
+
+border-radius: 50px;
+
+
 font-size: 13px;
+
+
+font-weight: 500;
+
+
+color: #526875;
+
+
+box-shadow: 0 3px 12px rgba(40,80,100,0.06);
 }
 
 
+
+.update-dot {
+
+
+width: 7px;
+height: 7px;
+
+
+background: #8ed138;
+
+
+border-radius: 50%;
+
+
+margin-right: 8px;
+}
+
+
+
+
+/* =========================
+MAIN
+========================= */
+
+
 .container {
-width: 86%;
-max-width: 1200px;
-margin: -30px auto 70px;
+
+
+width: 87%;
+
+
+max-width: 1250px;
+
+
+margin: -32px auto 70px;
+
+
 position: relative;
+
+
 z-index: 3;
 }
 
 
+
 .section-title {
-font-size: 20px;
-margin: 30px 0 15px;
+
+
+font-size: 19px;
+
+
+font-weight: 650;
+
+
+margin: 31px 0 16px;
+
+
+color: #27374a;
 }
+
+
+
+
+/* =========================
+CURRENCY CARDS
+========================= */
 
 
 .cards {
+
+
 display: grid;
+
+
 grid-template-columns: repeat(4, 1fr);
-gap: 16px;
+
+
+gap: 17px;
 }
 
 
+
 .card {
+
+
+background: rgba(255,255,255,0.96);
+
+
+border-radius: 20px;
+
+
+padding: 25px 25px 23px;
+
+
+box-shadow:
+0 7px 25px rgba(47,85,110,0.075);
+
+
+border: 1px solid rgba(220,232,239,0.85);
+
+
+transition: transform 0.2s ease,
+box-shadow 0.2s ease;
+}
+
+
+
+.card:hover {
+
+
+transform: translateY(-3px);
+
+
+box-shadow:
+0 12px 30px rgba(47,85,110,0.12);
+}
+
+
+
+.currency {
+
+
+font-size: 13px;
+
+
+color: #687c89;
+
+
+font-weight: 600;
+
+
+letter-spacing: 0;
+}
+
+
+
+.value {
+
+
+font-size: 31px;
+
+
+font-weight: 680;
+
+
+letter-spacing: -0.035em;
+
+
+color: #182335;
+
+
+margin: 14px 0 9px;
+}
+
+
+
+.change-up {
+
+
+color: #ef5961;
+
+
+font-size: 13px;
+
+
+font-weight: 600;
+}
+
+
+
+.change-down {
+
+
+color: #3c9a61;
+
+
+font-size: 13px;
+
+
+font-weight: 600;
+}
+
+
+
+.accent {
+
+
+height: 4px;
+
+
+width: 38px;
+
+
+background: #b5ec56;
+
+
+border-radius: 10px;
+
+
+margin-top: 21px;
+}
+
+
+
+
+/* =========================
+CHART
+========================= */
+
+
+.chart-box {
+
+
+margin-top: 19px;
+
+
 background: white;
+
+
 border-radius: 22px;
-padding: 24px;
-box-shadow: 0 8px 30px rgba(46, 91, 120, 0.10);
+
+
+padding: 30px 32px 28px;
+
+
+box-shadow:
+0 7px 28px rgba(47,85,110,0.075);
+
+
 border: 1px solid #edf3f6;
 }
 
 
-.currency {
-font-size: 14px;
-color: #698090;
-font-weight: 700;
-}
-
-
-.value {
-font-size: 30px;
-font-weight: 800;
-margin: 13px 0 9px;
-}
-
-
-.change-up {
-color: #ef5350;
-font-size: 14px;
-font-weight: 700;
-}
-
-
-.change-down {
-color: #3b9c55;
-font-size: 14px;
-font-weight: 700;
-}
-
-
-.accent {
-height: 6px;
-width: 44px;
-background: #b8f35a;
-border-radius: 10px;
-margin-top: 20px;
-}
-
-
-.chart-box {
-margin-top: 18px;
-background: white;
-border-radius: 25px;
-padding: 28px;
-box-shadow: 0 8px 30px rgba(46, 91, 120, 0.10);
-}
-
 
 .chart-header {
+
+
 display: flex;
+
+
 justify-content: space-between;
+
+
 align-items: center;
-margin-bottom: 20px;
+
+
+margin-bottom: 23px;
 }
+
 
 
 .chart-title {
-font-size: 19px;
-font-weight: 800;
+
+
+font-size: 18px;
+
+
+font-weight: 650;
+
+
+color: #26374a;
 }
+
 
 
 .badge {
-background: #eaf8d5;
-color: #4d7719;
+
+
+background: #edf8dd;
+
+
+color: #61892e;
+
+
 border-radius: 30px;
-padding: 7px 13px;
+
+
+padding: 7px 14px;
+
+
 font-size: 12px;
-font-weight: 700;
+
+
+font-weight: 600;
 }
+
 
 
 .chart-wrapper {
-height: 360px;
+
+
+height: 370px;
 }
 
 
+
+
+/* =========================
+INFO
+========================= */
+
+
 .info {
+
+
 display: grid;
+
+
 grid-template-columns: 1.5fr 1fr;
+
+
 gap: 18px;
+
+
 margin-top: 18px;
 }
 
 
+
 .info-box {
+
+
 background: white;
-border-radius: 22px;
-padding: 25px;
-box-shadow: 0 8px 30px rgba(46, 91, 120, 0.08);
+
+
+border-radius: 20px;
+
+
+padding: 27px;
+
+
+box-shadow:
+0 7px 25px rgba(47,85,110,0.065);
+
+
+border: 1px solid #edf3f6;
 }
+
 
 
 .info-box h3 {
-margin-top: 0;
+
+
+margin: 0 0 10px;
+
+
+font-size: 17px;
+
+
+font-weight: 650;
 }
+
+
+
+.info-box p {
+
+
+margin: 7px 0;
+
+
+font-size: 14px;
+
+
+line-height: 1.7;
+
+
+color: #72818c;
+
+
+font-weight: 400;
+}
+
 
 
 .green-circle {
-width: 55px;
-height: 55px;
+
+
+width: 52px;
+
+
+height: 52px;
+
+
 border-radius: 50%;
-background: #b8f35a;
+
+
+background: #b9f255;
+
+
 display: flex;
+
+
 align-items: center;
+
+
 justify-content: center;
-font-size: 22px;
-margin-bottom: 18px;
+
+
+font-size: 21px;
+
+
+font-weight: 650;
+
+
+color: #355719;
+
+
+margin-bottom: 19px;
 }
+
+
+
+
+/* =========================
+FOOTER
+========================= */
 
 
 .footer {
+
+
 text-align: center;
-color: #91a3af;
-font-size: 12px;
-padding: 30px;
+
+
+color: #9baab3;
+
+
+font-size: 11px;
+
+
+padding: 28px 20px 40px;
 }
 
 
-@media(max-width: 800px) {
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width: 850px) {
+
+
 h1 {
-font-size: 34px;
+font-size: 37px;
+}
+
+
+.header {
+padding-left: 5%;
+padding-right: 5%;
 }
 
 
@@ -264,26 +680,53 @@ grid-template-columns: 1fr;
 .container {
 width: 92%;
 }
+
+
 }
 
 
-@media(max-width: 500px) {
+
+@media(max-width: 520px) {
+
+
+h1 {
+font-size: 32px;
+}
+
+
 .cards {
 grid-template-columns: 1fr;
 }
+
+
+.chart-wrapper {
+height: 300px;
 }
+
+
+}
+
+
 </style>
 </head>
 
 
+
 <body>
+
+
+
+<!-- HEADER -->
 
 
 <div class="header">
 
 
 <div class="circle1"></div>
+
+
 <div class="circle2"></div>
+
 
 
 <div class="header-content">
@@ -294,7 +737,11 @@ DAILY MARKET DATA
 </div>
 
 
-<h1>Daily FX Dashboard</h1>
+
+<h1>
+Daily FX Dashboard
+</h1>
+
 
 
 <div class="subtitle">
@@ -302,17 +749,32 @@ DAILY MARKET DATA
 </div>
 
 
+
 <div class="update">
-● Last Updated · 2026.08.19
+
+
+<span class="update-dot"></span>
+
+
+Last Updated  2026.08.19
+
+
 </div>
 
 
 </div>
+
+
 </div>
 
+
+
+
+<!-- MAIN -->
 
 
 <div class="container">
+
 
 
 <div class="section-title">
@@ -320,49 +782,132 @@ DAILY MARKET DATA
 </div>
 
 
+
+
+<!-- CURRENCY CARDS -->
+
+
 <div class="cards">
 
 
-<div class="card">
-<div class="currency">🇺🇸 USD / KRW</div>
-<div class="value">1,385.20</div>
-<div class="change-up">▲ 4.80   +0.35%</div>
-<div class="accent"></div>
-</div>
-
 
 <div class="card">
-<div class="currency">🇪🇺 EUR / KRW</div>
-<div class="value">1,612.40</div>
-<div class="change-down">▼ 1.90   -0.12%</div>
-<div class="accent"></div>
+
+
+<div class="currency">
+🇺🇸  USD / KRW
 </div>
+
+
+<div class="value">
+1,385.20
+</div>
+
+
+<div class="change-up">
+▲ 4.80   +0.35%
+</div>
+
+
+<div class="accent"></div>
+
+
+</div>
+
+
 
 
 <div class="card">
-<div class="currency">🇯🇵 JPY / KRW</div>
-<div class="value">9.42</div>
-<div class="change-up">▲ 0.02   +0.21%</div>
-<div class="accent"></div>
+
+
+<div class="currency">
+🇪🇺  EUR / KRW
 </div>
+
+
+<div class="value">
+1,612.40
+</div>
+
+
+<div class="change-down">
+▼ 1.90   -0.12%
+</div>
+
+
+<div class="accent"></div>
+
+
+</div>
+
+
 
 
 <div class="card">
-<div class="currency">🇨🇳 CNY / KRW</div>
-<div class="value">192.31</div>
-<div class="change-down">▼ 0.16   -0.08%</div>
+
+
+<div class="currency">
+🇯🇵  JPY / KRW
+</div>
+
+
+<div class="value">
+9.42
+</div>
+
+
+<div class="change-up">
+▲ 0.02   +0.21%
+</div>
+
+
 <div class="accent"></div>
-</div>
 
 
 </div>
 
+
+
+
+<div class="card">
+
+
+<div class="currency">
+🇨🇳  CNY / KRW
+</div>
+
+
+<div class="value">
+192.31
+</div>
+
+
+<div class="change-down">
+▼ 0.16   -0.08%
+</div>
+
+
+<div class="accent"></div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<!-- CHART -->
 
 
 <div class="chart-box">
 
 
+
 <div class="chart-header">
+
 
 
 <div class="chart-title">
@@ -370,33 +915,53 @@ USD/KRW 환율 추이
 </div>
 
 
+
 <div class="badge">
 최근 30일
 </div>
 
 
+
 </div>
+
 
 
 <div class="chart-wrapper">
+
+
 <canvas id="fxChart"></canvas>
-</div>
 
 
 </div>
 
+
+
+</div>
+
+
+
+
+<!-- INFORMATION -->
 
 
 <div class="info">
 
 
+
 <div class="info-box">
 
 
-<div class="green-circle">₩</div>
+
+<div class="green-circle">
+₩
+</div>
 
 
-<h3>Daily FX Monitor</h3>
+
+<h3>
+Daily FX Monitor
+</h3>
+
 
 
 <p>
@@ -405,32 +970,44 @@ USD/KRW 환율 추이
 </p>
 
 
+
 </div>
+
+
 
 
 <div class="info-box">
 
 
-<h3>Data Information</h3>
+
+<h3>
+Data Information
+</h3>
+
 
 
 <p>
-기준일 : 2026.08.19
+기준일   2026.08.19
 </p>
+
 
 
 <p>
-업데이트 : Daily
+업데이트   Daily
 </p>
 
 
-</div>
-
 
 </div>
 
 
+
 </div>
+
+
+
+</div>
+
 
 
 
@@ -440,10 +1017,16 @@ Daily FX Dashboard
 
 
 
+
+<!-- CHART SCRIPT -->
+
+
 <script>
 
 
-const ctx = document.getElementById('fxChart');
+const ctx =
+document.getElementById('fxChart');
+
 
 
 new Chart(ctx, {
@@ -452,46 +1035,101 @@ new Chart(ctx, {
 type: 'line',
 
 
+
 data: {
 
 
 labels: [
-'07/21','07/23','07/25','07/27','07/29',
-'07/31','08/04','08/06','08/08','08/10',
-'08/12','08/14','08/18','08/19'
+
+
+'07/21',
+'07/23',
+'07/25',
+'07/27',
+'07/29',
+'07/31',
+'08/04',
+'08/06',
+'08/08',
+'08/10',
+'08/12',
+'08/14',
+'08/18',
+'08/19'
+
+
 ],
 
 
+
 datasets: [{
+
+
 label: 'USD/KRW',
 
 
 data: [
-1368,1374,1382,1377,1388,
-1380,1367,1372,1381,1391,
-1383,1375,1380,1385.2
+
+
+1368,
+1374,
+1382,
+1377,
+1388,
+1380,
+1367,
+1372,
+1381,
+1391,
+1383,
+1375,
+1380,
+1385.2
+
+
 ],
 
 
-borderColor: '#4b9fe1',
-backgroundColor: 'rgba(75,159,225,0.10)',
+
+borderColor:
+'#4c9ed7',
 
 
-borderWidth: 3,
+
+backgroundColor:
+'rgba(76,158,215,0.08)',
+
+
+
+borderWidth: 2.5,
+
 
 
 fill: true,
 
 
-tension: 0.35,
+
+tension: 0.38,
 
 
-pointRadius: 3,
+
+pointRadius: 2.5,
 
 
-pointBackgroundColor: '#4b9fe1'
+
+pointHoverRadius: 6,
+
+
+
+pointBackgroundColor:
+'#4c9ed7'
+
+
 }]
+
+
 },
+
 
 
 options: {
@@ -503,32 +1141,129 @@ responsive: true,
 maintainAspectRatio: false,
 
 
+
+interaction: {
+
+
+intersect: false,
+
+
+mode: 'index'
+
+
+},
+
+
+
 plugins: {
 
 
 legend: {
 display: false
+},
+
+
+tooltip: {
+
+
+backgroundColor:
+'#1d2b3b',
+
+
+padding: 12,
+
+
+cornerRadius: 9,
+
+
+titleFont: {
+family: 'Pretendard'
+},
+
+
+bodyFont: {
+family: 'Pretendard'
+}
+
+
 }
 
 
 },
+
 
 
 scales: {
 
 
+
 x: {
-grid: {
+
+
+border: {
 display: false
-}
 },
 
 
-y: {
 grid: {
-color: '#edf2f5'
+display: false
+},
+
+
+ticks: {
+
+
+color: '#8a9aa5',
+
+
+font: {
+family: 'Pretendard',
+size: 11
 }
+
+
 }
+
+
+},
+
+
+
+y: {
+
+
+border: {
+display: false
+},
+
+
+grid: {
+
+
+color:
+'#edf2f5'
+
+
+},
+
+
+ticks: {
+
+
+color: '#8a9aa5',
+
+
+font: {
+family: 'Pretendard',
+size: 11
+}
+
+
+}
+
+
+}
+
 
 
 }
@@ -541,6 +1276,7 @@ color: '#edf2f5'
 
 
 </script>
+
 
 
 </body>
