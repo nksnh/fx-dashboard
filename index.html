@@ -3,22 +3,545 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <title>Daily FX Dashboard</title>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<style>
+* {
+box-sizing: border-box;
+}
+
+
+body {
+margin: 0;
+font-family: Arial, "Noto Sans KR", sans-serif;
+background: #f7fbfd;
+color: #14213d;
+}
+
+
+.header {
+position: relative;
+overflow: hidden;
+background: #a9d5ee;
+padding: 55px 7% 65px;
+min-height: 260px;
+}
+
+
+.circle1 {
+position: absolute;
+width: 330px;
+height: 330px;
+border-radius: 50%;
+background: rgba(255,255,255,0.28);
+right: 8%;
+top: -100px;
+}
+
+
+.circle2 {
+position: absolute;
+width: 180px;
+height: 180px;
+border-radius: 50%;
+background: #b9f45c;
+right: 2%;
+bottom: -100px;
+opacity: 0.8;
+}
+
+
+.header-content {
+position: relative;
+z-index: 2;
+max-width: 1200px;
+margin: auto;
+}
+
+
+.small-title {
+font-size: 14px;
+font-weight: 700;
+letter-spacing: 2px;
+margin-bottom: 12px;
+}
+
+
+h1 {
+margin: 0;
+font-size: 46px;
+letter-spacing: -2px;
+}
+
+
+.subtitle {
+margin-top: 13px;
+font-size: 17px;
+color: #39566c;
+}
+
+
+.update {
+margin-top: 30px;
+display: inline-block;
+background: rgba(255,255,255,0.75);
+padding: 10px 16px;
+border-radius: 30px;
+font-size: 13px;
+}
+
+
+.container {
+width: 86%;
+max-width: 1200px;
+margin: -30px auto 70px;
+position: relative;
+z-index: 3;
+}
+
+
+.section-title {
+font-size: 20px;
+margin: 30px 0 15px;
+}
+
+
+.cards {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 16px;
+}
+
+
+.card {
+background: white;
+border-radius: 22px;
+padding: 24px;
+box-shadow: 0 8px 30px rgba(46, 91, 120, 0.10);
+border: 1px solid #edf3f6;
+}
+
+
+.currency {
+font-size: 14px;
+color: #698090;
+font-weight: 700;
+}
+
+
+.value {
+font-size: 30px;
+font-weight: 800;
+margin: 13px 0 9px;
+}
+
+
+.change-up {
+color: #ef5350;
+font-size: 14px;
+font-weight: 700;
+}
+
+
+.change-down {
+color: #3b9c55;
+font-size: 14px;
+font-weight: 700;
+}
+
+
+.accent {
+height: 6px;
+width: 44px;
+background: #b8f35a;
+border-radius: 10px;
+margin-top: 20px;
+}
+
+
+.chart-box {
+margin-top: 18px;
+background: white;
+border-radius: 25px;
+padding: 28px;
+box-shadow: 0 8px 30px rgba(46, 91, 120, 0.10);
+}
+
+
+.chart-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+
+.chart-title {
+font-size: 19px;
+font-weight: 800;
+}
+
+
+.badge {
+background: #eaf8d5;
+color: #4d7719;
+border-radius: 30px;
+padding: 7px 13px;
+font-size: 12px;
+font-weight: 700;
+}
+
+
+.chart-wrapper {
+height: 360px;
+}
+
+
+.info {
+display: grid;
+grid-template-columns: 1.5fr 1fr;
+gap: 18px;
+margin-top: 18px;
+}
+
+
+.info-box {
+background: white;
+border-radius: 22px;
+padding: 25px;
+box-shadow: 0 8px 30px rgba(46, 91, 120, 0.08);
+}
+
+
+.info-box h3 {
+margin-top: 0;
+}
+
+
+.green-circle {
+width: 55px;
+height: 55px;
+border-radius: 50%;
+background: #b8f35a;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 22px;
+margin-bottom: 18px;
+}
+
+
+.footer {
+text-align: center;
+color: #91a3af;
+font-size: 12px;
+padding: 30px;
+}
+
+
+@media(max-width: 800px) {
+h1 {
+font-size: 34px;
+}
+
+
+.cards {
+grid-template-columns: repeat(2, 1fr);
+}
+
+
+.info {
+grid-template-columns: 1fr;
+}
+
+
+.container {
+width: 92%;
+}
+}
+
+
+@media(max-width: 500px) {
+.cards {
+grid-template-columns: 1fr;
+}
+}
+</style>
 </head>
 
 
 <body>
+
+
+<div class="header">
+
+
+<div class="circle1"></div>
+<div class="circle2"></div>
+
+
+<div class="header-content">
+
+
+<div class="small-title">
+DAILY MARKET DATA
+</div>
+
+
 <h1>Daily FX Dashboard</h1>
 
 
-<h2>USD/KRW</h2>
-<p>1,385.20</p>
+<div class="subtitle">
+주요 통화 환율 현황 및 일간 추이
+</div>
 
 
-<h2>EUR/KRW</h2>
-<p>1,612.40</p>
+<div class="update">
+● Last Updated · 2026.08.19
+</div>
 
 
-<p>환율 대시보드 테스트 페이지입니다.</p>
+</div>
+</div>
+
+
+
+<div class="container">
+
+
+<div class="section-title">
+오늘의 환율
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+<div class="currency">🇺🇸 USD / KRW</div>
+<div class="value">1,385.20</div>
+<div class="change-up">▲ 4.80   +0.35%</div>
+<div class="accent"></div>
+</div>
+
+
+<div class="card">
+<div class="currency">🇪🇺 EUR / KRW</div>
+<div class="value">1,612.40</div>
+<div class="change-down">▼ 1.90   -0.12%</div>
+<div class="accent"></div>
+</div>
+
+
+<div class="card">
+<div class="currency">🇯🇵 JPY / KRW</div>
+<div class="value">9.42</div>
+<div class="change-up">▲ 0.02   +0.21%</div>
+<div class="accent"></div>
+</div>
+
+
+<div class="card">
+<div class="currency">🇨🇳 CNY / KRW</div>
+<div class="value">192.31</div>
+<div class="change-down">▼ 0.16   -0.08%</div>
+<div class="accent"></div>
+</div>
+
+
+</div>
+
+
+
+<div class="chart-box">
+
+
+<div class="chart-header">
+
+
+<div class="chart-title">
+USD/KRW 환율 추이
+</div>
+
+
+<div class="badge">
+최근 30일
+</div>
+
+
+</div>
+
+
+<div class="chart-wrapper">
+<canvas id="fxChart"></canvas>
+</div>
+
+
+</div>
+
+
+
+<div class="info">
+
+
+<div class="info-box">
+
+
+<div class="green-circle">₩</div>
+
+
+<h3>Daily FX Monitor</h3>
+
+
+<p>
+주요 통화의 원화 환율과 최근 움직임을
+한눈에 확인할 수 있습니다.
+</p>
+
+
+</div>
+
+
+<div class="info-box">
+
+
+<h3>Data Information</h3>
+
+
+<p>
+기준일 : 2026.08.19
+</p>
+
+
+<p>
+업데이트 : Daily
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer">
+Daily FX Dashboard
+</div>
+
+
+
+<script>
+
+
+const ctx = document.getElementById('fxChart');
+
+
+new Chart(ctx, {
+
+
+type: 'line',
+
+
+data: {
+
+
+labels: [
+'07/21','07/23','07/25','07/27','07/29',
+'07/31','08/04','08/06','08/08','08/10',
+'08/12','08/14','08/18','08/19'
+],
+
+
+datasets: [{
+label: 'USD/KRW',
+
+
+data: [
+1368,1374,1382,1377,1388,
+1380,1367,1372,1381,1391,
+1383,1375,1380,1385.2
+],
+
+
+borderColor: '#4b9fe1',
+backgroundColor: 'rgba(75,159,225,0.10)',
+
+
+borderWidth: 3,
+
+
+fill: true,
+
+
+tension: 0.35,
+
+
+pointRadius: 3,
+
+
+pointBackgroundColor: '#4b9fe1'
+}]
+},
+
+
+options: {
+
+
+responsive: true,
+
+
+maintainAspectRatio: false,
+
+
+plugins: {
+
+
+legend: {
+display: false
+}
+
+
+},
+
+
+scales: {
+
+
+x: {
+grid: {
+display: false
+}
+},
+
+
+y: {
+grid: {
+color: '#edf2f5'
+}
+}
+
+
+}
+
+
+}
+
+
+});
+
+
+</script>
+
+
 </body>
 </html>
